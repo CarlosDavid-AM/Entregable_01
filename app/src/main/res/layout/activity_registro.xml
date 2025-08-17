@@ -72,7 +72,7 @@
 
     <Button
         android:id="@+id/btnCancelResidue"
-        android:text="Calcelar"
+        android:text="Cancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

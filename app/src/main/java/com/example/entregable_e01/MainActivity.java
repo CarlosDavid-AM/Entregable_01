@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.entregable_e01.Widgets.ListarActivity;
 import com.example.entregable_e01.Widgets.RegistroActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RegistroActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnViewRegisters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListarActivity.class);
                 startActivity(intent);
             }
         });
