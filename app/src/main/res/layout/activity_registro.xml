@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:paddingTop="50dp"
+    android:paddingHorizontal="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Widgets.RegistroActivity">
+
+    <EditText
+        android:id="@+id/Name"
+        android:hint="Nombre del trabajador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliga el tipo de Desecho" />
+
+        <RadioButton
+            android:id="@+id/optOrganic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Orgánico" />
+
+        <RadioButton
+            android:id="@+id/optPlastic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plástico" />
+
+        <RadioButton
+            android:id="@+id/optPaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Papel" />
+
+        <RadioButton
+            android:id="@+id/optCardboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cartón" />
+
+        <RadioButton
+            android:id="@+id/optMetal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metal" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edtQuantity"
+        android:hint="Ingrese una Cantidad"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnRegisterResidue"
+        android:text="Registrar residuo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnCancelResidue"
+        android:text="Calcelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
