@@ -30,47 +30,54 @@ public class DBTrash extends DBHelper {
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM waste", null,  null);
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery("SELECT * FROM " + TABLE_WASTE, null);
 
-        while (cursor.moveToNext()) {
-            trash = new Trash();
-            trash.setId(cursor.getInt(0));
-            trash.setWorkerName(cursor.getString(1));
-            trash.setWasteType(cursor.getString(2));
-            trash.setQuantity(cursor.getDouble(3));
-            trash.setFecha(LocalDateTime.parse(cursor.getString(4)));
+            while (cursor.moveToNext()) {
+                trash = new Trash();
+                trash.setId(cursor.getInt(0));
+                trash.setWorkerName(cursor.getString(1));
+                trash.setWasteType(cursor.getString(2));
+                trash.setQuantity(cursor.getDouble(3));
+                trash.setFecha(LocalDateTime.parse(cursor.getString(4)));
 
-            trashList.add(trash);
+                trashList.add(trash);
+            }
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
         }
 
         return trashList;
     }
 
     public Trash getTrashById(int id) {
-        Trash trash = new Trash();
+        Trash trash = null;
 
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = null;
 
-        String[] parameters = {
-                String.valueOf(id)
-        };
-
-        String[] fields = {
-                "id", "workerName", "wasteType", "quantity", "fecha"
-        };
-
         try {
-            trash.setId(cursor.getInt(0));
-            trash.setWorkerName(cursor.getString(1));
-            trash.setWasteType(cursor.getString(2));
-            trash.setQuantity(cursor.getDouble(3));
-            trash.setFecha(LocalDateTime.parse(cursor.getString(4)));
+            cursor = db.rawQuery("SELECT * FROM " + TABLE_WASTE + " WHERE id = ?", new String[]{String.valueOf(id)});
+
+            if (cursor.moveToFirst()) {
+                trash = new Trash();
+                trash.setId(cursor.getInt(0));
+                trash.setWorkerName(cursor.getString(1));
+                trash.setWasteType(cursor.getString(2));
+                trash.setQuantity(cursor.getDouble(3));
+                trash.setFecha(LocalDateTime.parse(cursor.getString(4)));
+            }
         } catch (Exception e) {
-            e.toString();
+            e.printStackTrace();
         } finally {
-            cursor.close();
+            if (cursor != null) {
+                cursor.close();
+            }
             db.close();
         }
 
