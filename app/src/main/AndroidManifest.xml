@@ -12,14 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Entregable_E01"
         tools:targetApi="31">
+
         <activity
             android:name=".Widgets.ListarActivity"
             android:exported="false" />
         <activity
             android:name=".Widgets.RegistroActivity"
             android:exported="false" />
+
+<!--        Se modigo el "activity" para que una ves la app se inicie        -->
+<!--        entre al Widgets de Login como si fuera el Widgets principal     -->
         <activity
-            android:name=".MainActivity"
+            android:name=".Widgets.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
