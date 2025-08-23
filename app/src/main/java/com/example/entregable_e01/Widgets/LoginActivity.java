@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
     }
 
-    String user = "admin";
+    String user = "Carlos";
     String pass = "Password123";
 
     public void Login() {

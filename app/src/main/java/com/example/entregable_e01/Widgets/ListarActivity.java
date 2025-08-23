@@ -38,7 +38,7 @@ public class ListarActivity extends AppCompatActivity {
         ArrayList<String> list = new ArrayList<>();
 
         for (int i = 0; i < data.size(); i++) {
-            list.add(data.get(i).getWorkerName() + " - " + data.get(i).getWasteType() + " - " + data.get(i).getQuantity());
+            list.add("id:" + data.get(i).getId() + "/ " + data.get(i).getWorkerName() + " - " + data.get(i).getWasteType() + " - " + data.get(i).getQuantity());
         }
 
         ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);

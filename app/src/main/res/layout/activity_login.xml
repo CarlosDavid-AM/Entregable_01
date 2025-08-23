@@ -11,6 +11,18 @@
     android:layout_height="match_parent"
     tools:context=".Widgets.LoginActivity">
 
+    <TextView
+        android:text="Carlos"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Password123"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/edtUsername"
         android:hint="Ingrese su usuario"
