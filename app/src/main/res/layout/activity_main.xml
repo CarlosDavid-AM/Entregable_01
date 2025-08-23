@@ -5,10 +5,16 @@
     android:id="@+id/main"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
-    android:gravity="center"
+    android:paddingTop="60dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:src="@drawable/basura_main"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="70dp"/>
 
     <Button
         android:id="@+id/btnRegisterResidue"
